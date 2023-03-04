@@ -1,17 +1,22 @@
 #main {
   display: flex;
+  flex-wrap: wrap;
 }
 
 a {
   align-items: center;
-  background-color: rgba(0, 0, 0, .1);
+  background-color: rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   display: inline-flex;
-  line-height: 64px;
-  margin: 0 10px 10px 0;
+  flex-direction: column;
   height: 64px;
   justify-content: center;
+  margin: 0 10px 10px 0;
   text-decoration: none;
   text-align: center;
   width: 64px;
+}
+
+a img {
+  height: 32px;
 }
