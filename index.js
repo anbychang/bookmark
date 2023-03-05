@@ -7,6 +7,7 @@ let bookmarks = [
 
 let main = document.querySelector('#main')
 bookmarks.forEach((bookmark, i) => {
+  let div = document.createElement('div')
   let a = document.createElement('a')
   a.href = `https://${bookmark.url}`
   a.id = `bookmark-${i}`

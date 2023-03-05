@@ -3,6 +3,14 @@
   flex-wrap: wrap;
 }
 
+#block {
+  display: flex;
+  height: 120px;
+  width: 72px;
+  flex-direction: column;
+
+}
+
 a {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.1);
