@@ -1,8 +1,18 @@
-let bookmarks = [
-  { name: 'APCS', url: 'yuihuang.com/apcs/' },
-  { name: 'Drive', url: 'drive.google.com' },
-  { name: 'Gmail', url: 'mail.google.com'},
-  { name: 'Google', url: 'www.google.com' },
+let bookmarkGroups = [
+  {
+    bookmarks: [
+      { name: 'Drive', url: 'drive.google.com' },
+      { name: 'Gmail', url: 'mail.google.com'},
+      { name: 'Google', url: 'www.google.com' },
+    ],
+    name: 'Google',
+  },
+  {
+    bookmarks: [
+      { name: 'APCS', url: 'yuihuang.com/apcs/' },
+    ],
+    name: 'coding',
+  }
 ]
 
 const createElement = (tag, attrs) => Object.assign(document.createElement(tag), attrs)
@@ -10,22 +20,28 @@ const createElement = (tag, attrs) => Object.assign(document.createElement(tag),
 const main = document.querySelector('#main')
 main.replaceChildren() // remove sample bookmarks
 
-bookmarks.forEach((bookmark, i) => {
-  const div = createElement('div', { className: 'bookmark', id: `bookmark-${i}` })
-  main.appendChild(div)
+bookmarkGroups.forEach(group => {
+  const groupDiv = createElement('div', { className: 'group' })
+  main.appendChild(groupDiv)
 
-  const a = createElement('a', { href: `https://${bookmark.url}` })
-  div.appendChild(a)
+  groupDiv.appendChild(createElement('h1', { innerText: group.name }))
 
-  let img = document.createElement('img')
-  if (bookmark.url.endsWith('.google.com'))
-    img.src = `https://${bookmark.url}/favicon.ico`
-  else
-    img.src = `https://www.google.com/s2/favicons?domain=${bookmark.url}&sz=32`
-  a.appendChild(img)
+  group.bookmarks.forEach(bookmark => {
+    const bookmarkDiv = createElement('div', { className: 'bookmark' })
+    groupDiv.append(bookmarkDiv)
 
-  const span = createElement('span', { className: 'name', innerText: bookmark.name })
-  div.appendChild(span)
+    const a = createElement('a', { href: `https://${bookmark.url}` })
+    bookmarkDiv.appendChild(a)
+
+    let imgSrc
+    if (bookmark.url.endsWith('.google.com'))
+      imgSrc = `https://${bookmark.url}/favicon.ico`
+    else
+      imgSrc = `https://www.google.com/s2/favicons?domain=${bookmark.url}&sz=32`
+    a.appendChild(createElement('img', { src: imgSrc }))
+
+    bookmarkDiv.appendChild(createElement('span', { className: 'name', innerText: bookmark.name }))
+  })
 })
 
 // prepare for future directory structure

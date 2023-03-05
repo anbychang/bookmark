@@ -1,6 +1,10 @@
-#main {
-  display: flex;
-  flex-wrap: wrap;
+.group {
+  margin: 6px;
+}
+
+.group h1 {
+  font-size: 1.2em;
+  margin: 6px;
 }
 
 .bookmark {
@@ -13,7 +17,7 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  margin: 6px;
+  margin: 0 6px 6px;
   width: 60px;
 }
 
@@ -29,6 +33,5 @@
 
 .bookmark .name {
   align-items: flex-start;
-  margin-top: 0;
   height: 32px;
 }
