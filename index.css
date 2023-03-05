@@ -9,14 +9,15 @@ a {
   border-radius: 10px;
   display: inline-flex;
   flex-direction: column;
-  height: 64px;
+  height: 72px;
   justify-content: center;
-  margin: 0 10px 10px 0;
+  margin: 6px;
   text-decoration: none;
   text-align: center;
-  width: 64px;
+  width: 72px;
 }
 
 a img {
   height: 32px;
+  margin-bottom: 2px;
 }
