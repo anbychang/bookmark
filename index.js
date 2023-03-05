@@ -5,12 +5,17 @@ let bookmarks = [
   { name: 'Google', url: 'www.google.com' },
 ]
 
-let main = document.querySelector('#main')
+const createElement = (tag, attrs) => Object.assign(document.createElement(tag), attrs)
+
+const main = document.querySelector('#main')
+main.replaceChildren() // remove sample bookmarks
+
 bookmarks.forEach((bookmark, i) => {
-  let div = document.createElement('div')
-  let a = document.createElement('a')
-  a.href = `https://${bookmark.url}`
-  a.id = `bookmark-${i}`
+  const div = createElement('div', { className: 'bookmark', id: `bookmark-${i}` })
+  main.appendChild(div)
+
+  const a = createElement('a', { href: `https://${bookmark.url}` })
+  div.appendChild(a)
 
   let img = document.createElement('img')
   if (bookmark.url.endsWith('.google.com'))
@@ -19,12 +24,8 @@ bookmarks.forEach((bookmark, i) => {
     img.src = `https://www.google.com/s2/favicons?domain=${bookmark.url}&sz=32`
   a.appendChild(img)
 
-  let text = document.createElement('div')
-  text.class = 'text'
-  text.innerText = bookmark.name
-  a.appendChild(text)
-
-  main.appendChild(a)
+  const span = createElement('span', { className: 'name', innerText: bookmark.name })
+  div.appendChild(span)
 })
 
 // prepare for future directory structure
