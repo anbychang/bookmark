@@ -35,3 +35,7 @@
   align-items: flex-start;
   height: 32px;
 }
+
+body {
+  padding: 100px;
+}

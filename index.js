@@ -1,17 +1,26 @@
 let bookmarkGroups = [
   {
     bookmarks: [
-      { name: 'Drive', url: 'drive.google.com' },
-      { name: 'Gmail', url: 'mail.google.com'},
-      { name: 'Google', url: 'www.google.com' },
+      { name: 'facebook', url: 'facebook.com/' },
+      { name: 'messenger', url: 'facebook.com/messages'},
     ],
-    name: 'Google',
+    name: 'FB',
   },
   {
     bookmarks: [
-      { name: 'APCS', url: 'yuihuang.com/apcs/' },
+      { name: 'drive', url: 'drive.google.com'},
+      { name: 'gmail', url: 'gmail.google.com' },
+      { name: 'google', url: 'google.com' },
+      { name: 'youtube', url: 'youtube.com' },
     ],
-    name: 'coding',
+    name: 'google',
+  },
+  {
+    bookmarks: [
+      { name: 'Shell Shockers', url: 'crazygames.com/game/shellshockersio' },
+      { name: 'chess', url: 'chess.com/home' },
+    ],
+    name: 'play',
   }
 ]
 
