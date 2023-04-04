@@ -21,7 +21,13 @@ let bookmarkGroups = [
       { name: 'chess', url: 'chess.com/home' },
     ],
     name: 'play',
-  }
+  },
+  {
+    bookmarks: [
+      { name: 'online math', url: 'youtube.com/playlist?list=PLVV3BISc6yQvEpPKMCgN2rljzis8UtFVf' },
+    ],
+    name: 'learn',
+  },
 ]
 
 const createElement = (tag, attrs) => Object.assign(document.createElement(tag), attrs)
